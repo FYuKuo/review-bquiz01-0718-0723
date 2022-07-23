@@ -163,3 +163,12 @@ input:focus,button:focus
 .m-auto {
 	margin: auto;
 }
+
+.page>a {
+	text-decoration: none;
+	color: #0CF;
+}
+
+.nowPage {
+	font-size: 1.5rem;
+}

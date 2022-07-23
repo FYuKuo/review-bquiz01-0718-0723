@@ -51,7 +51,7 @@
                 ?>
             </tbody>
         </table>
-        <div class="cent">
+        <div class="cent page">
             <?php
             if($page > 1){
             ?>
@@ -62,7 +62,7 @@
             }
             for ($i=1; $i <= $pages ; $i++) { 
                 ?>
-                    <a href="?do=<?=$do?>&page=<?=$i?>"><?=$i?></a>
+                    <a href="?do=<?=$do?>&page=<?=$i?>" class=" <?=($page == $i)?'nowPage':''?> "><?=$i?></a>
                     <?php
                 }
                 if($page < $pages){

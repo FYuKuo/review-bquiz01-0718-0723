@@ -23,29 +23,10 @@ switch($_POST['table']) {
     break;
         
     case 'ad':
-        $data['sh']=0;
-        
-    break;
-        
     case 'mvim':
-        $data['sh']=0;
-
-    break;
-
     case 'image':
-
-    break;
-
-    case 'total':
-
-        
-    break;
-
-    case 'bottom':
-
-    break;
-
     case 'news':
+        $data['sh']=1;
 
     break;
 
