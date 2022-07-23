@@ -25,11 +25,8 @@ foreach ($_POST['id'] as $key => $value) {
             break;
         
             case 'mvim':
-                $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
-            break;
-        
             case 'image':
-        
+                $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
             break;
         
             case 'total':

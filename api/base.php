@@ -108,14 +108,16 @@ class DB {
     public function math($math,...$arg) {
         $sql = "SELECT $math(*) FROM `$this->table`";
 
-        if(is_array($arg[0])){
-            foreach ($arg[0] as $key => $value) {
-                $tmp[]= "`$key`='$value'";
+        if(isset($arg[0])){
+            if(is_array($arg[0])){
+                foreach ($arg[0] as $key => $value) {
+                    $tmp[]= "`$key`='$value'";
+                }
+    
+                $sql = $sql . " WHERE" . join('AND',$tmp);
+            }else {
+                $sql = $sql . $arg[0];
             }
-
-            $sql = $sql . " WHERE" . join('AND',$tmp);
-        }else {
-            $sql = $sql . $arg[0];
         }
 
         if(isset($arg[1])){
@@ -207,6 +209,8 @@ class STR
             $this->header = '校園映像資料管理';
             $this->img = '校園映像資料圖片';
             $this->updateBtn = '更換圖片';
+            $this->updateHeader = '更新校園映像圖片';
+            $this->updateImg = '校園映像圖片：';
             $this->addBtn = '新增校園映像圖片';
             $this->addHeader = '新增校園映像圖片';
             $this->addImg = '校園映像圖片：'; 
