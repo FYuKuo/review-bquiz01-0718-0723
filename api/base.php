@@ -272,5 +272,13 @@ if(isset($do)){
 }
 
 $Title = new DB('title');
+$Bottom = new DB('bottom');
+$Total = new DB('total');
+$Menu = new DB('menu');
+$News = new DB('news');
+$Ad = new DB('ad');
+$Image = new DB('image');
+$Mvim = new DB('mvim');
+$Admin = new DB('admin');
 
 ?>

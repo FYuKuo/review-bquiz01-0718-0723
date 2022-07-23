@@ -169,6 +169,26 @@ input:focus,button:focus
 	color: #0CF;
 }
 
+
+.mainmu_out {
+	position: relative;
+}
+
+.mw {
+	display: none;
+	position: absolute;
+	width: 215.03px;
+	right: -150px;
+	top: 8px;
+	z-index: 100;
+	
+}
+
 .nowPage {
 	font-size: 1.5rem;
+}
+
+.border_Y {
+	border:#FC3 solid 4px;
+
 }
