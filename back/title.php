@@ -20,21 +20,21 @@
                             <img src="../img/<?= $row['img'] ?>" alt="" style="width: 300px; height:30px;">
                         </td>
                         <td>
-                            <?= $row['text'] ?>
+                            <input type="text" name="text[]" id="text" value="<?= $row['text'] ?>">
                         </td>
                         <td>
-                            <input type="radio" name="sh" id="sh" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
+                            <input type="radio" name="sh" id="sh" value="<?=$row['id']?>" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
                         </td>
                         <td>
-                            <input type="checkbox" name="del[]" id="del">
+                            <input type="checkbox" name="del[]" id="del" value="<?=$row['id']?>">
                         </td>
                         <td>
-                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php')" value="<?= $STR->updateBtn ?>">
+                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>')" value="<?= $STR->updateBtn ?>">
                         </td>
                     </tr>
 
                     <input type="hidden" name="table" value="<?=$do?>">
-                    <input type="hidden" name="id" value="<?=$row['id']?>">
+                    <input type="hidden" name="id[]" value="<?=$row['id']?>">
                 <?php
                 }
                 ?>
