@@ -1,51 +1,31 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?= $STR->header; ?></p>
-    <form method="post" action="../api/edit.php">
-        <table width="100%" class="cent">
+    <form method="post" action="../api/update.php" >
+        <table width="70%" class="cent" style="margin: auto;">
             <tbody>
-                <tr class="yel">
-                    <td width="45%"><?= $STR->img ?></td>
-                    <td width="23%"><?= $STR->text ?></td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <td></td>
-                </tr>
                 <?php
-                $rows =  $DB->all();
-
-                // dd($rows);
-                foreach ($rows as $row) {
+                $row =  $DB->find(1);
                 ?>
                     <tr>
-                        <td>
-                            <img src="../img/<?= $row['img'] ?>" alt="" style="width: 300px; height:30px;">
+
+                        <td class="yel">
+                        <?= $STR->text; ?>
                         </td>
                         <td>
-                            <input type="text" name="text[]" id="text" value="<?= $row['text'] ?>">
-                        </td>
-                        <td>
-                            <input type="radio" name="sh" id="sh" value="<?=$row['id']?>" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="del[]" id="del" value="<?=$row['id']?>">
-                        </td>
-                        <td>
-                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>')" value="<?= $STR->updateBtn ?>">
+                            <input type="text" name="text" id="text" value="<?= $row['text'] ?>" style="width: 80%">
                         </td>
                     </tr>
 
                     <input type="hidden" name="table" value="<?=$do?>">
-                    <input type="hidden" name="id[]" value="<?=$row['id']?>">
-                <?php
-                }
-                ?>
+                    <input type="hidden" name="id" value="<?=$row['id']?>">
             </tbody>
         </table>
-        <table style="margin-top:40px; width:70%;">
+        <table style="margin: auto; margin-top:40px; width:70%;">
             <tbody>
                 <tr>
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','../modal/<?= $do ?>.php')" value="<?= $STR->addBtn ?>"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置">
+                    <td colspan="2" class="cent">
+                        <input type="submit" value="修改確定">
+                        <input type="reset" value="重置">
                     </td>
                 </tr>
             </tbody>

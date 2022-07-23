@@ -29,15 +29,6 @@ foreach ($_POST['id'] as $key => $value) {
                 $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
             break;
         
-            case 'total':
-        
-                
-            break;
-        
-            case 'bottom':
-        
-            break;
-        
             case 'news':
         
             break;
