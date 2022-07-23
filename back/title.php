@@ -29,7 +29,7 @@
                             <input type="checkbox" name="del[]" id="del" value="<?=$row['id']?>">
                         </td>
                         <td>
-                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>')" value="<?= $STR->updateBtn ?>">
+                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>&do=<?=$do?>')" value="<?= $STR->updateBtn ?>">
                         </td>
                     </tr>
 

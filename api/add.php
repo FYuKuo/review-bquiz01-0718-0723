@@ -24,10 +24,11 @@ switch($_POST['table']) {
         
     case 'ad':
         $data['sh']=0;
-
+        
     break;
-
+        
     case 'mvim':
+        $data['sh']=0;
 
     break;
 

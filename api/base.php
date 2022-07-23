@@ -196,6 +196,8 @@ class STR
             $this->header = '動畫圖片管理';
             $this->img = '動畫圖片';
             $this->updateBtn = '更換動畫';
+            $this->updateHeader = '更新動畫圖片';
+            $this->updateImg = '動畫圖片：';
             $this->addBtn = '新增動畫圖片';
             $this->addHeader = '新增動畫圖片';
             $this->addImg = '動畫圖片：'; 
