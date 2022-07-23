@@ -4,32 +4,25 @@
         <table width="100%" class="cent">
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?= $STR->img ?></td>
-                    <td width="23%"><?= $STR->text ?></td>
+                    <td ><?= $STR->text ?></td>
                     <td width="7%">顯示</td>
                     <td width="7%">刪除</td>
-                    <td></td>
                 </tr>
                 <?php
-                $rows =  $Title->all();
+                $rows =  $DB->all();
                 // dd($rows);
                 foreach ($rows as $row) {
                 ?>
                     <tr>
+
                         <td>
-                            <img src="../img/<?= $row['img'] ?>" alt="" style="width: 300px; height:30px;">
+                            <input type="text" name="text[]" id="text" value="<?= $row['text'] ?>" style="width: 90%;">
                         </td>
                         <td>
-                            <input type="text" name="text[]" id="text" value="<?= $row['text'] ?>">
-                        </td>
-                        <td>
-                            <input type="radio" name="sh" id="sh" value="<?=$row['id']?>" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
+                            <input type="checkbox" name="sh[]" id="sh" value="<?=$row['id']?>" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
                         </td>
                         <td>
                             <input type="checkbox" name="del[]" id="del" value="<?=$row['id']?>">
-                        </td>
-                        <td>
-                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>')" value="<?= $STR->updateBtn ?>">
                         </td>
                     </tr>
 
@@ -43,8 +36,12 @@
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','../modal/<?= $do ?>.php?do=<?=$do?>')" value="<?= $STR->addBtn ?>"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置">
+                    <td width="200px">
+                        <input type="button" onclick="op('#cover','#cvr','../modal/<?= $do ?>.php?do=<?=$do?>')" value="<?= $STR->addBtn ?>">
+                    </td>
+                    <td class="cent">
+                        <input type="submit" value="修改確定">
+                        <input type="reset" value="重置">
                     </td>
                 </tr>
             </tbody>

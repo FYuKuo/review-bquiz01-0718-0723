@@ -21,8 +21,9 @@ switch($_POST['table']) {
     case 'title':
         $data['sh']=0;
     break;
-
+        
     case 'ad':
+        $data['sh']=0;
 
     break;
 

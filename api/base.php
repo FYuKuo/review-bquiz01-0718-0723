@@ -260,6 +260,8 @@ class STR
 
 if(isset($do)){
     $STR = new STR($do);
+    $DB = new DB($do);
+
 }
 
 $Title = new DB('title');

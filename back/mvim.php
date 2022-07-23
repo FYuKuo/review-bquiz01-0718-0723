@@ -11,7 +11,8 @@
                     <td></td>
                 </tr>
                 <?php
-                $rows =  $Title->all();
+                $rows =  $DB->all();
+
                 // dd($rows);
                 foreach ($rows as $row) {
                 ?>

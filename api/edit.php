@@ -17,8 +17,10 @@ foreach ($_POST['id'] as $key => $value) {
                 $row['text'] = $_POST['text'][$key];
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $value)?1:0;
             break;
-        
+                
             case 'ad':
+                $row['text'] = $_POST['text'][$key];
+                $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
         
             break;
         
