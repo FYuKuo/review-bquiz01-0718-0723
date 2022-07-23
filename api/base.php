@@ -88,7 +88,7 @@ class DB {
     }
 
     public function del($id) {
-        $sql = "SELECT * FROM `$this->table`";
+        $sql = "DELETE FROM `$this->table`";
 
         if(is_array($id)){
             foreach ($id as $key => $value) {

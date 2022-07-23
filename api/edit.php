@@ -2,45 +2,61 @@
 include('./base.php');
 $DB = new DB($_POST['table']);
 
-$data = [];
 
-switch($_POST['table']) {
-    case 'title':
+foreach ($_POST['id'] as $key => $value) {
+
+    if(isset($_POST['del']) && in_array($value,$_POST['del'])) {
+
+        $DB->del($value);
+
+    }else{
+        $row = $DB->find($value);
+
+        switch($_POST['table']) {
+            case 'title':
+                $row['text'] = $_POST['text'][$key];
+                $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $value)?1:0;
+            break;
         
-    break;
-
-    case 'ad':
-
-    break;
-
-    case 'mvim':
-
-    break;
-
-    case 'image':
-
-    break;
-
-    case 'total':
-
+            case 'ad':
         
-    break;
+            break;
+        
+            case 'mvim':
+        
+            break;
+        
+            case 'image':
+        
+            break;
+        
+            case 'total':
+        
+                
+            break;
+        
+            case 'bottom':
+        
+            break;
+        
+            case 'news':
+        
+            break;
+        
+            case 'admin':
+        
+            break;
+        
+            case 'menu':
+        
+            break;
+        }
 
-    case 'bottom':
+        $DB->save($row);
+    }
 
-    break;
-
-    case 'news':
-
-    break;
-
-    case 'admin':
-
-    break;
-
-    case 'menu':
-
-    break;
+   
 }
 
+to('../back.php?do='.$_POST['table']);
 ?>
