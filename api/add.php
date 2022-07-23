@@ -4,7 +4,6 @@ $DB = new DB($_POST['table']);
 
 $data = [];
 
-dd($_FILES['img']);
 
 if(isset($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$_FILES['img']['name']);
@@ -31,7 +30,14 @@ switch($_POST['table']) {
     break;
 
     case 'admin':
-
+        if($_POST['pw'] == $_POST['pwCh']) {
+            $data['acc'] = $_POST['acc'];
+            $data['pw'] = $_POST['pw'];
+        }else {
+            echo "<script>";
+            echo "alert('請重新確認密碼')";
+            echo "</script>";
+        }
     break;
 
     case 'menu':
@@ -39,7 +45,10 @@ switch($_POST['table']) {
     break;
 }
 
-$DB->save($data);
+if(!empty($data)){
+    $DB->save($data);
+}
 
-to('../back.php?do='.$_POST['table']);
+header("refresh:0;url=../back.php?do={$_POST['table']}");
+
 ?>

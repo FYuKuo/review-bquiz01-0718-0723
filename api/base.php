@@ -239,7 +239,7 @@ class STR
             $this->header = '管理者帳號管理';
             $this->acc = '帳號';
             $this->pw = '密碼';
-            $this->pwCheck = '密碼';
+            $this->pwCheck = '確認密碼';
             $this->addBtn = '新增管理者帳號';
             $this->addHeader = '新增管理者帳號';
             break;

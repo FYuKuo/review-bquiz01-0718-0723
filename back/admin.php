@@ -1,14 +1,12 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?= $STR->header; ?></p>
     <form method="post" action="../api/edit.php">
-        <table width="100%" class="cent">
+        <table width="80%" class="cent m-auto" >
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?= $STR->img ?></td>
-                    <td width="23%"><?= $STR->text ?></td>
-                    <td width="7%">顯示</td>
+                    <td width="45%"><?= $STR->acc ?></td>
+                    <td width="23%"><?= $STR->pw ?></td>
                     <td width="7%">刪除</td>
-                    <td></td>
                 </tr>
                 <?php
                 $rows =  $DB->all();
@@ -18,19 +16,13 @@
                 ?>
                     <tr>
                         <td>
-                            <img src="../img/<?= $row['img'] ?>" alt="" style="width: 300px; height:30px;">
+                            <input type="text" name="acc[]" id="acc" value="<?= $row['acc'] ?>" style="width: 80%;">
                         </td>
                         <td>
-                            <input type="text" name="text[]" id="text" value="<?= $row['text'] ?>">
-                        </td>
-                        <td>
-                            <input type="radio" name="sh" id="sh" value="<?=$row['id']?>" <?= ($row['sh'] == 1) ? 'checked' : '' ?>>
+                            <input type="password" name="pw[]" id="pw" value="<?= $row['pw'] ?>" style="width: 80%;">
                         </td>
                         <td>
                             <input type="checkbox" name="del[]" id="del" value="<?=$row['id']?>">
-                        </td>
-                        <td>
-                            <input type="button" onclick="op('#cover','#cvr','../modal/updateImg.php?id=<?=$row['id']?>')" value="<?= $STR->updateBtn ?>">
                         </td>
                     </tr>
 
@@ -41,7 +33,7 @@
                 ?>
             </tbody>
         </table>
-        <table style="margin-top:40px; width:70%;">
+        <table style="margin-top:40px; width:80%;">
             <tbody>
                 <tr>
                     <td width="200px"><input type="button" onclick="op('#cover','#cvr','../modal/<?= $do ?>.php?do=<?=$do?>')" value="<?= $STR->addBtn ?>"></td>
