@@ -253,6 +253,7 @@ class STR
             $this->updateHeader = '編輯次選單';
             $this->updateText = '次選單名稱';
             $this->updateHref = '次選單連結網址';
+            $this->addBtn = '新增主選單';
             $this->addHeader = '新增主選單';
             $this->addText = '主選單名稱：';
             $this->addHref = '選單連結網址：';

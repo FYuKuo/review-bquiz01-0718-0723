@@ -41,6 +41,10 @@ switch($_POST['table']) {
     break;
 
     case 'menu':
+        $data['text'] = $_POST['text'];
+        $data['href'] = $_POST['href'];
+        $data['sh']=1;
+        $data['parent']=0;
 
     break;
 }

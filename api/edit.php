@@ -28,13 +28,17 @@ foreach ($_POST['id'] as $key => $value) {
             case 'image':
             case 'news':    
                 $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
-            break;
-        
+                break;
+                
             case 'admin':
-        
-            break;
+                $row['acc'] = $_POST['acc'][$key];
+                $row['pw'] = $_POST['pw'][$key];
+                break;
         
             case 'menu':
+                $row['text'] = $_POST['text'][$key];
+                $row['href'] = $_POST['href'][$key];
+                $row['sh'] = (isset($_POST['sh']) && in_array($value,$_POST['sh']))?1:0;
         
             break;
         }
